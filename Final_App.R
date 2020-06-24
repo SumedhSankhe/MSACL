@@ -143,11 +143,14 @@ server <- function(session, input, output) {
                         qcproduct = input$qcproduct)
         
         updateSelectInput(session, "test", "Select Test:", 
-                          choices = c("<All>", unique(df$Test)))
+                          choices = c("<All>", unique(df$Test)),
+                          selected = input$test)
         updateSelectInput(session, "analyzer", "Select Analyzer:", 
-                          choices = c("<All>", unique(df$Analyzer)))
+                          choices = c("<All>", unique(df$Analyzer)),
+                          selected = input$analyzer)
         updateSelectInput(session, "qcproduct", "Select QC Product:", 
-                          choices = c("<All>", unique(df$QC_Mnemonic)))
+                          choices = c("<All>", unique(df$QC_Mnemonic)),
+                          selected = input$qcproducts)
         return(df)
     })
     
