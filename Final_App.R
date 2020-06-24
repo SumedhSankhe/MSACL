@@ -150,7 +150,7 @@ server <- function(session, input, output) {
                           selected = input$analyzer)
         updateSelectInput(session, "qcproduct", "Select QC Product:", 
                           choices = c("<All>", unique(df$QC_Mnemonic)),
-                          selected = input$qcproducts)
+                          selected = input$qcproduct)
         return(df)
     })
     
